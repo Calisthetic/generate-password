@@ -31,6 +31,7 @@ print(f'Доступные символы: {ARRAY_SYMBOLS}')
 print(f'Количество доступных символов: {len(ARRAY_SYMBOLS)}')
 print(f'Количество возможных комбинаций: {count_variant}')
 
+# Генерируем пароль
 password = ''
 for i in range(0, count_symbols):
     password = password + f'{random_symbols()}'
