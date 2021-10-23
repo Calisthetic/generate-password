@@ -1,4 +1,6 @@
 import random
+import datetime
+import os
 
 # Набор доступных символов
 ARRAY_SYMBOLS = [
@@ -39,7 +41,24 @@ for i in range(0, count_symbols):
 
 print(f'Сгенерированный пароль: {password}')
 
-# Записываем в файл пароль с новой строки
-with open('password.txt', 'a') as password_string:
+text_datetime = f'{datetime.datetime.now()}'
+symbols_replace = ['-', ' ', ':', '.']
+file_name = ''
+for s in text_datetime:
+    is_write = True
+    for sr in symbols_replace:
+        if s == sr:
+            file_name += '_'
+            is_write = False
+    if is_write:
+        file_name += s
+
+if not os.path.exists('passwords'):
+    os.mkdir('passwords')
+
+#
+with open(f'password/{file_name}_password.txt', 'a') as password_string:
     password_string.write('{}\n'.format(f'{password}'))
+
+input()
 
