@@ -27,7 +27,7 @@ def random_symbols():
     return ARRAY_SYMBOLS[random.randint(0, len(ARRAY_SYMBOLS) - 1)]
 
 
-print(f'Версия рограммы: v0.0.1')
+print(f'Версия рограммы: v0.0.2')
 print(f'Доступные символы: {ARRAY_SYMBOLS}')
 print(f'Количество доступных символов: {len(ARRAY_SYMBOLS)}')
 print(f'Количество возможных комбинаций: {count_variant}')
