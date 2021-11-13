@@ -16,14 +16,14 @@ def generation_password(count_symbols):
 
     response = app.response_class(
         response=json.dumps({
-            "version_app": '0.0.4',
+            "version_app": '0.0.1',
             "count_array_symbols": f'{len(password.get_array_symbols())}',
             "array_symbols": f'{password.get_array_symbols()}',
             "count_variant": f'{password.count_variant}',
             "password": f'{password.password}'
         }),
         status=200,
-        minetype='application/json'
+        mimetype='application/json'
     )
 
     return response
